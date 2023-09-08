@@ -7,7 +7,13 @@ export function Header() {
     <Styles.Container>
       <h1>RocketMovies</h1>
 
-      <Input type="text" placeholder="Pesquisar pelo titulo" Icon={FiSearch} />
+      <div>
+        <Input
+          type="text"
+          placeholder="Pesquisar pelo titulo"
+          Icon={FiSearch}
+        />
+      </div>
 
       <Styles.Profile>
         <div>

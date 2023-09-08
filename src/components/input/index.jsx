@@ -1,10 +1,10 @@
 import * as Styles from "./styles";
 
-export function Input({ Icon, ...rest }) {
+export function Input({ Icon, type, placeholder, ...rest }) {
   return (
     <Styles.Container>
-      {Icon && <Icon size="20"/>}
-      <input {...rest} />
+      {Icon && <Icon size="20" />}
+      <input type={type} placeholder={placeholder} {...rest} />
     </Styles.Container>
   );
 }

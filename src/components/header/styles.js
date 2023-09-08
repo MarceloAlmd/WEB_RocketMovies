@@ -7,12 +7,25 @@ export const Container = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-  gap: 4rem;
-
-  padding: 0 7.5rem;
+  padding: 0 1rem;
+  gap: 1rem;
 
   border-bottom: 1px solid ${({ theme }) => theme.COLORS.GRAY_300};
   grid-area: header;
+
+  > div:nth-child(2) {
+    width: 100%;
+    max-width: 650px;
+  }
+
+  > h1 {
+    color: ${({ theme }) => theme.COLORS.PINK_500};
+    font-size: 1.5rem;
+
+    @media (max-width: 600px) {
+      display: none;
+    }
+  }
 `;
 
 export const Profile = styled.div`
@@ -24,11 +37,13 @@ export const Profile = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-
-    width: 125px;
+    width: 100%;
+    max-width: 125px;
 
     strong {
       font-size: 0.8rem;
+
+      text-align: right;
     }
 
     button {
@@ -45,5 +60,10 @@ export const Profile = styled.div`
     height: 64px;
 
     border-radius: 50%;
+
+    @media (max-width: 600px) {
+      width: 54px;
+      height: 54px;
+    }
   }
 `;

@@ -13,5 +13,5 @@ export const Container = styled.button`
 
   font-size: 1rem;
 
-  margin-top: 1rem;
+  margin-top: ${({ marginTop }) => marginTop};
 `;

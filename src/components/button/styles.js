@@ -8,6 +8,10 @@ export const Container = styled.button`
   border: none;
   border-radius: 10px;
 
-  color: ${({theme}) => theme.COLORS.GRAY_300};
-  font-weight: 500;
+  color: ${({ theme }) => theme.COLORS.GRAY_300};
+  font-weight: bold;
+
+  font-size: 1rem;
+
+  margin-top: 1rem;
 `;

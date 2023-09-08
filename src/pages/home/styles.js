@@ -79,8 +79,9 @@ export const MyMovies = styled.div`
 
 export const Content = styled.div`
   width: 100%;
+  max-width: 1500px;
   grid-area: content;
-  padding: 0 14rem;
+  padding: 0 1rem;
 
   overflow-y: auto;
   margin: 0 auto;

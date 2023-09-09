@@ -72,7 +72,7 @@ export const MyMovies = styled.div`
       font-size: 1.3rem;
     }
   }
-  @media (max-width: 800px) {
+  @media (max-width: 855px) {
     padding: 1rem;
   }
 `;

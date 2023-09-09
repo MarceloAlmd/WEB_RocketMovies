@@ -21,10 +21,10 @@ React, Styled-Components, React-Router-Dom
 ## Version Mobile
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/4b210ebe-fbca-4264-aec0-1eae59c39b02)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/3b658987-c316-4882-9ca3-6f8d2d4e2bf2)
-![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/8612f5a9-e3ab-46a5-b131-9d12e26e7b11)
+![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/2f9ee280-e311-48ee-9bbf-fad04fd4589f)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/77a084b0-dd76-47a1-ab5c-3677d7416f19)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/418adf7b-a4ed-4eaa-8572-72768e083d39)
-![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/7b25cf8c-39d1-4b1e-9b78-5a4eca2d3a8f)
+![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/b9fe91d6-26e5-4b08-8eb1-fc1519bcf0f6)
 
 
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/f8243643-2169-4e8c-b1d7-aa3184782fa2)

@@ -47,11 +47,10 @@ export const MyMovies = styled.div`
         text-decoration: none;
         font-size: 1rem;
         font-weight: bold;
-      }
-
-      @media (max-width: 700px) {
-        font-size: 0.75rem;
-        flex: 1;
+        @media (max-width: 700px) {
+          font-size: 0.75rem;
+          flex: 1;
+        }
       }
     }
 

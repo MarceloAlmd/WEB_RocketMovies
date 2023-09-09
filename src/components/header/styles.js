@@ -43,9 +43,10 @@ export const Profile = styled.div`
 
     a {
       text-decoration: none;
-      strong {
-        font-size: 0.8rem;
+      font-size: 0.8rem;
         text-align: right;
+      strong {
+        
         color: ${({ theme }) => theme.COLORS.WHITE};
       }
     }

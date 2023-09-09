@@ -10,6 +10,6 @@ export const Container = styled(Link)`
   margin-left: ${({ marginLeft }) => marginLeft || `9rem`};
 
   @media (max-width: 760px) {
-    margin-left: 1rem;
+    margin-left: ${({ marginLeft }) => marginLeft || `9rem`};
   }
 `;

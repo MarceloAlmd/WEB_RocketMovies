@@ -12,7 +12,7 @@ export function Details() {
       <Header />
 
       <Styles.Content>
-        <BackLink to="#" marginLeft="0" />
+        <BackLink to="/" marginLeft="0" />
         <Styles.ContentTitleAndRating>
           <h1>Interestellar</h1>
           <Rating rating={4} size={20} />

@@ -22,7 +22,7 @@ React, Styled-Components, React-Router-Dom
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/4b210ebe-fbca-4264-aec0-1eae59c39b02)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/3b658987-c316-4882-9ca3-6f8d2d4e2bf2)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/2f9ee280-e311-48ee-9bbf-fad04fd4589f)
-![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/77a084b0-dd76-47a1-ab5c-3677d7416f19)
+![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/db4fad38-4095-4fe4-a518-78f607c20562)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/418adf7b-a4ed-4eaa-8572-72768e083d39)
 ![image](https://github.com/MarceloAlmd/WEB_RocketMovies/assets/85407905/b9fe91d6-26e5-4b08-8eb1-fc1519bcf0f6)
 

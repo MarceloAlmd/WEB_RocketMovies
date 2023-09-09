@@ -14,25 +14,10 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLORS.BROWN_100};
     display: flex;
     align-items: center;
-
-    a {
-      display: flex;
-      align-items: center;
-      color: ${({ theme }) => theme.COLORS.PINK_500};
-      text-decoration: none;
-      gap: 0.5rem;
-      margin-left: 9rem;
-    }
   }
 
   @media (max-width: 600px) {
     grid-template-rows: 7rem auto;
-
-    > header {
-      a {
-        margin-left: 1rem;
-      }
-    }
   }
 `;
 

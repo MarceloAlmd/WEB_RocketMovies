@@ -1,16 +1,14 @@
 import * as Styles from "./styles";
-import { FiArrowLeft, FiCamera, FiLock, FiMail, FiUser } from "react-icons/fi";
+import { FiCamera, FiLock, FiMail, FiUser } from "react-icons/fi";
 
 import { Input } from "../../components/input";
 import { Button } from "../../components/button";
+import { BackLink } from "../../components/backLink";
 export function Profile() {
   return (
     <Styles.Container>
       <header>
-        <a href="/">
-          <FiArrowLeft />
-          Voltar
-        </a>
+        <BackLink to="#"/>
       </header>
 
       <Styles.Form>

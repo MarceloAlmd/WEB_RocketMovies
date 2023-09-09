@@ -9,7 +9,10 @@ export const Container = styled.div`
 `;
 
 export const Form = styled.div`
-  padding: 0 8rem;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 3rem;
 
   display: flex;
   justify-content: center;
@@ -39,6 +42,10 @@ export const Form = styled.div`
 
     margin-top: 3rem;
   }
+
+  @media (max-width: 776px) {
+    padding: 0 1rem;
+  }
 `;
 
 export const Background = styled.div`
@@ -46,4 +53,8 @@ export const Background = styled.div`
   background: url("/cineBackgroundImg.svg") no-repeat center center;
 
   background-size: cover;
+
+  @media (max-width: 776px) {
+    display: none;
+  }
 `;

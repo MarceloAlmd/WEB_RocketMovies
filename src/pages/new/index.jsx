@@ -12,7 +12,7 @@ export function New() {
 
       <Styles.Content>
         <Styles.ContentTitleAndArrow>
-          <BackLink to="#" marginLeft="0" />
+          <BackLink to="/" marginLeft="0" />
           <h1>Novo Filme</h1>
         </Styles.ContentTitleAndArrow>
 

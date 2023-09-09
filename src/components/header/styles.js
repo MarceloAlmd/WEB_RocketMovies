@@ -37,13 +37,17 @@ export const Profile = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
+    gap: 0.3rem;
     width: 100%;
     max-width: 125px;
 
-    strong {
-      font-size: 0.8rem;
-
-      text-align: right;
+    a {
+      text-decoration: none;
+      strong {
+        font-size: 0.8rem;
+        text-align: right;
+        color: ${({ theme }) => theme.COLORS.WHITE};
+      }
     }
 
     button {
@@ -55,15 +59,21 @@ export const Profile = styled.div`
       align-self: flex-end;
     }
   }
-  > img {
-    width: 64px;
-    height: 64px;
+  > a {
+    &:hover {
+      filter: brightness(1);
+    }
 
-    border-radius: 50%;
+    img {
+      width: 64px;
+      height: 64px;
 
-    @media (max-width: 600px) {
-      width: 54px;
-      height: 54px;
+      border-radius: 50%;
+
+      @media (max-width: 600px) {
+        width: 54px;
+        height: 54px;
+      }
     }
   }
 `;

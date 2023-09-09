@@ -12,7 +12,7 @@ export const Form = styled.div`
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  padding: 0 8.5rem;
+  padding: 0 3rem;
 
   display: flex;
   justify-content: center;
@@ -41,9 +41,14 @@ export const Form = styled.div`
     text-align: center;
 
     margin-top: 3rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
   }
 
-  @media (max-width: 770px) {
+  @media (max-width: 776px) {
     padding: 0 1rem;
   }
 `;
@@ -54,7 +59,7 @@ export const Background = styled.div`
 
   background-size: cover;
 
-  @media (max-width: 770px) {
+  @media (max-width: 776px) {
     display: none;
   }
 `;

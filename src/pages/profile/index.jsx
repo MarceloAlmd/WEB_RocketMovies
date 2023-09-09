@@ -8,7 +8,7 @@ export function Profile() {
   return (
     <Styles.Container>
       <header>
-        <BackLink to="#"/>
+        <BackLink to="/"/>
       </header>
 
       <Styles.Form>

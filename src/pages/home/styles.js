@@ -14,7 +14,7 @@ export const MyMovies = styled.div`
   width: 100%;
   margin: 0 auto;
 
-  padding: 0 14rem;
+  padding: 0 21rem;
 
   display: flex;
   align-items: center;
@@ -42,10 +42,12 @@ export const MyMovies = styled.div`
       background-color: transparent;
       border: none;
 
-      font-size: 1rem;
-      font-weight: bold;
-
-      color: ${({ theme }) => theme.COLORS.GRAY_300};
+      a {
+        color: ${({ theme }) => theme.COLORS.GRAY_300};
+        text-decoration: none;
+        font-size: 1rem;
+        font-weight: bold;
+      }
 
       @media (max-width: 700px) {
         font-size: 0.75rem;

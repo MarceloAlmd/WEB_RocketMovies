@@ -20,7 +20,7 @@ export const Container = styled.div`
     outline: none;
     color: ${({ theme }) => theme.COLORS.WHITE};
 
-    padding: 0 0.5rem;
+    padding: 0 1rem;
 
     &::placeholder {
       color: ${({ theme }) => theme.COLORS.GRAY_100};

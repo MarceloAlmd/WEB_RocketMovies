@@ -1,6 +1,6 @@
 # Rocket Movies
 
-application to manage film and series notes
+application to manage film and series notes <br/>
 ⚠️application under development
 
 ## 🛠 Used

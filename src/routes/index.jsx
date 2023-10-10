@@ -6,7 +6,7 @@ import { PublicRoutes } from "./public";
 export function Routes() {
   return (
     <BrowserRouter>
-      <AuthenticatedRoutes />
+      <PublicRoutes />
     </BrowserRouter>
   );
 }

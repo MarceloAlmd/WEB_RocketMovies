@@ -5,11 +5,17 @@ import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "../modal";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
+import avatar_img from "../../../public/avatar_placeholder.svg";
+import { api } from "../../services/api";
 
 export function Header() {
-  const { logOut } = useAuth();
+  const { logOut, user } = useAuth();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatar_img;
 
   const handleShowModal = () => {
     setShowModal(true);
@@ -39,13 +45,13 @@ export function Header() {
       <Styles.Profile>
         <div>
           <Link to="/profile">
-            <strong>Marcelo Magalhaes</strong>
+            <strong>{user.name}</strong>
           </Link>
           <button onClick={handleShowModal}>Sair</button>
         </div>
 
         <Link to="/profile">
-          <img src="https://github.com/marceloalmd.png" alt="foto do usuario" />
+          <img src={avatarUrl} alt={`Foto do usuário ${user.name}`} />
         </Link>
       </Styles.Profile>
 

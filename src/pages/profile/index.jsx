@@ -9,6 +9,8 @@ import { BackLink } from "../../components/backLink";
 import { useAuth } from "../../hooks/auth";
 import { useState } from "react";
 import { FormError } from "../../components/formError";
+import avatar_img from "../../../public/avatar_placeholder.svg";
+import { api } from "../../services/api";
 
 export function Profile() {
   const { user, updateProfile } = useAuth();
@@ -18,6 +20,19 @@ export function Profile() {
   const [email, setEmail] = useState(user.email);
   const [currentPassword, setCurrentPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
+
+  const avatarUrl = user.avatar
+    ? `${api.defaults.baseURL}/files/${user.avatar}`
+    : avatar_img;
+  const [avatar, setAvatar] = useState(avatarUrl);
+  const [avatarFile, setAvatarFile] = useState(null);
+
+  const handleChangeAvatar = (e) => {
+    const file = e.target.files[0];
+    setAvatarFile(file);
+    const imagePreview = URL.createObjectURL(file);
+    setAvatar(imagePreview);
+  };
 
   const handleUpdateProfile = async () => {
     try {
@@ -37,7 +52,7 @@ export function Profile() {
         current_password: currentPassword,
         new_password: newPassword,
       };
-      await updateProfile({ user });
+      await updateProfile({ user, avatarFile });
     } catch (error) {
       if (error.response) {
         const message = translation(error.response.data.message);
@@ -58,10 +73,10 @@ export function Profile() {
 
       <Styles.Form>
         <Styles.Profile>
-          <img src="https://github.com/marceloalmd.png" alt="foto do usuario" />
+          <img src={avatar} alt={`Foto do Usuário ${user.name}`} />
           <label htmlFor="avatar">
             <FiCamera />
-            <input type="file" id="avatar" />
+            <input type="file" id="avatar" onChange={handleChangeAvatar} />
           </label>
         </Styles.Profile>
 

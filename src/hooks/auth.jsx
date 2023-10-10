@@ -9,6 +9,7 @@ function AuthProvider({ children }) {
   const [showAlertUpdated, setShowAlertUpdated] = useState(false);
   const [data, setData] = useState({});
 
+  console.log(data);
   const handleShowAlert = () => {
     setShowAlert(true);
 
@@ -25,8 +26,17 @@ function AuthProvider({ children }) {
     }, 3000);
   };
 
-  const updateProfile = async ({ user }) => {
+  const updateProfile = async ({ user, avatarFile }) => {
     try {
+      if (avatarFile) {
+        const avatarFormData = new FormData();
+        avatarFormData.append("avatar", avatarFile);
+
+        const response = await api.patch("/users/avatar", avatarFormData);
+
+        setData({ token: data.token, user: response.data });
+      }
+
       const response = await api.put("/users", user);
       const userUpdated = response.data;
 

@@ -9,7 +9,6 @@ function AuthProvider({ children }) {
   const [showAlertUpdated, setShowAlertUpdated] = useState(false);
   const [data, setData] = useState({});
 
-  console.log(data);
   const handleShowAlert = () => {
     setShowAlert(true);
 

@@ -69,6 +69,7 @@ export const Profile = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
 
     svg {
       font-size: 1.2rem;

@@ -14,6 +14,12 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.COLORS.BROWN_100};
     display: flex;
     align-items: center;
+
+    @media (max-width: 600px) {
+      > a {
+        margin-left: 1rem;
+      }
+    }
   }
 
   @media (max-width: 600px) {
@@ -24,12 +30,12 @@ export const Container = styled.div`
 export const Form = styled.form`
   grid-area: form;
   width: 100%;
-  max-width: 21.25rem;
+  max-width: 23.25rem;
   margin: 0 auto;
 
   padding: 1rem;
 
-  > div:nth-child(4){
+  > div:nth-child(4) {
     margin-top: 1.5rem;
   }
 
@@ -44,7 +50,6 @@ export const Profile = styled.div`
   height: 11rem;
   margin: -100px auto 4rem;
 
-
   > img {
     width: 11rem;
     height: 11rem;
@@ -56,7 +61,7 @@ export const Profile = styled.div`
     right: 7px;
     bottom: 7px;
 
-    background-color: ${({theme}) => theme.COLORS.PINK_500};
+    background-color: ${({ theme }) => theme.COLORS.PINK_500};
     height: 3rem;
     width: 3rem;
 
@@ -67,7 +72,7 @@ export const Profile = styled.div`
 
     svg {
       font-size: 1.2rem;
-      color: ${({theme}) => theme.COLORS.GRAY_300};
+      color: ${({ theme }) => theme.COLORS.GRAY_300};
     }
     input {
       display: none;

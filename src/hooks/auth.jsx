@@ -6,6 +6,7 @@ const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
   const [showAlert, setShowAlert] = useState(false);
+  const [showAlertUpdated, setShowAlertUpdated] = useState(false);
   const [data, setData] = useState({});
 
   const handleShowAlert = () => {
@@ -14,6 +15,28 @@ function AuthProvider({ children }) {
     setTimeout(() => {
       setShowAlert(false);
     }, 3000);
+  };
+
+  const handleShowAlertUserUpdated = () => {
+    setShowAlertUpdated(true);
+
+    setTimeout(() => {
+      setShowAlertUpdated(false);
+    }, 3000);
+  };
+
+  const updateProfile = async ({ user }) => {
+    try {
+      const response = await api.put("/users", user);
+      const userUpdated = response.data;
+
+      localStorage.setItem("@rocketMovies:user", JSON.stringify(userUpdated));
+
+      setData({ token: data.token, user: userUpdated });
+      handleShowAlertUserUpdated();
+    } catch (error) {
+      throw error;
+    }
   };
 
   const signIn = async ({ email, password }) => {
@@ -48,17 +71,20 @@ function AuthProvider({ children }) {
       api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       setData({
         token,
-        user: JSON.stringify(user),
+        user: JSON.parse(user),
       });
     }
   }, []);
 
   return (
     <>
-      <AuthContext.Provider value={{ signIn, user: data.user, logOut }}>
+      <AuthContext.Provider
+        value={{ signIn, user: data.user, logOut, updateProfile }}
+      >
         {children}
       </AuthContext.Provider>
       {showAlert && <Alert message={`Seja Bem-Vindo ${data.user.name}`} />}
+      {showAlertUpdated && <Alert message="Usuário atualizado com sucesso" />}
     </>
   );
 }

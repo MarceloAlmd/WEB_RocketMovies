@@ -10,8 +10,6 @@ export function Home() {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
 
-  console.log(title);
-
   useEffect(() => {
     async function fetchNotes() {
       const response = await api.get(`/notes?title=${title}`);
@@ -19,7 +17,7 @@ export function Home() {
     }
 
     fetchNotes();
-  }, []);
+  }, [title]);
   return (
     <Styles.Container>
       <Header setTitle={setTitle} />

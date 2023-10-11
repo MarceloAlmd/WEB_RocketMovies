@@ -2,7 +2,6 @@ import * as Styles from "./styles";
 import { FiX, FiPlus } from "react-icons/fi";
 
 export function NewMovieInputTag({
-  readOnly,
   placeholder,
   value,
   onClick,
@@ -15,10 +14,10 @@ export function NewMovieInputTag({
         placeholder={placeholder}
         value={value}
         {...rest}
-        readOnly={readOnly}
+        readOnly={!isNew}
       />
 
-      <button onClick={onClick} {...rest}>
+      <button type="button" onClick={onClick} {...rest}>
         {isNew ? <FiPlus /> : <FiX />}
       </button>
     </Styles.Container>

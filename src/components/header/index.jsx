@@ -8,7 +8,7 @@ import { useAuth } from "../../hooks/auth";
 import avatar_img from "../../../public/avatar_placeholder.svg";
 import { api } from "../../services/api";
 
-export function Header() {
+export function Header({ setTitle }) {
   const { logOut, user } = useAuth();
   const navigate = useNavigate();
   const [showModal, setShowModal] = useState(false);
@@ -39,6 +39,7 @@ export function Header() {
           type="text"
           placeholder="Pesquisar pelo titulo"
           Icon={FiSearch}
+          onChange={(e) => setTitle(e.target.value)}
         />
       </div>
 

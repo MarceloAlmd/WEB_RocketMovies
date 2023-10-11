@@ -3,11 +3,26 @@ import { Link } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
 import { Header } from "../../components/header";
 import { Note } from "../../components/note";
+import { useEffect, useState } from "react";
+import { api } from "../../services/api";
 
 export function Home() {
+  const [notes, setNotes] = useState([]);
+  const [title, setTitle] = useState("");
+
+  console.log(title);
+
+  useEffect(() => {
+    async function fetchNotes() {
+      const response = await api.get(`/notes?title=${title}`);
+      setNotes(response.data);
+    }
+
+    fetchNotes();
+  }, []);
   return (
     <Styles.Container>
-      <Header />
+      <Header setTitle={setTitle} />
       <Styles.MyMovies>
         <h1>Meus filmes</h1>
         <div className="content-button">
@@ -19,84 +34,9 @@ export function Home() {
       </Styles.MyMovies>
       <Styles.Content>
         <main>
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
-          <Note
-            data={{
-              title: "InterStellar",
-              rating: 5,
-              description:
-                "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga consequuntur magni! Repudiandae, sunt eos fuga dolorem nihil id inventore molestias pariatur ad omnis quibusdam ea architecto eaque quam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga cLorem ipsum dolor sit amet consectetur adipisicing elit. Delectus magnam fuga c",
-              tags: [
-                { id: 1, name: "Ficção Científica" },
-                { id: 2, name: "Drama" },
-                { id: 3, name: "Familia" },
-              ],
-            }}
-          />
+          {notes.map((note) => (
+            <Note key={String(note.id)} data={note} />
+          ))}
         </main>
       </Styles.Content>
     </Styles.Container>

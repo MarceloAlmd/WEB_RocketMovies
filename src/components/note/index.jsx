@@ -4,7 +4,7 @@ import * as Styles from "./styles";
 
 export function Note({ data, ...rest }) {
   return (
-    <Styles.Container>
+    <Styles.Container {...rest}>
       <h2>{data.title}</h2>
       <Rating rating={data.rating} />
       <span>{data.description}</span>

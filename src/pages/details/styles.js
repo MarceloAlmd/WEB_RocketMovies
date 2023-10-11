@@ -46,6 +46,18 @@ export const Content = styled.div`
   @media (max-width: 776px) {
     padding: 0 1rem;
   }
+
+  > header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    > button {
+      width: 7rem;
+      height: 2rem;
+    }
+  }
 `;
 
 export const ContentTitleAndRating = styled.div`

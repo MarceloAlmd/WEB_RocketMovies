@@ -1,5 +1,5 @@
 import * as Styles from "./styles";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FiPlus } from "react-icons/fi";
 import { Header } from "../../components/header";
 import { Note } from "../../components/note";
@@ -9,6 +9,12 @@ import { api } from "../../services/api";
 export function Home() {
   const [notes, setNotes] = useState([]);
   const [title, setTitle] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleShowDetailNote = (id) => {
+    navigate(`/details/${id}`);
+  };
 
   useEffect(() => {
     async function fetchNotes() {
@@ -33,7 +39,11 @@ export function Home() {
       <Styles.Content>
         <main>
           {notes.map((note) => (
-            <Note key={String(note.id)} data={note} />
+            <Note
+              key={String(note.id)}
+              data={note}
+              onClick={() => handleShowDetailNote(note.id)}
+            />
           ))}
         </main>
       </Styles.Content>

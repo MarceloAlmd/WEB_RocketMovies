@@ -1,7 +1,6 @@
 # Rocket Movies
 
 application to manage film and series notes <br/>
-⚠️application under development
 
 ## 🛠 Used
 React, Styled-Components, React-Router-Dom

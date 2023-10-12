@@ -1,8 +1,7 @@
 import * as Styles from "./styles";
 import { AiOutlineClockCircle } from "react-icons/ai";
 
-import { format } from "date-fns";
-import { ptBR } from "date-fns/locale";
+import { format, subHours } from "date-fns";
 import { Header } from "../../components/header";
 import { BackLink } from "../../components/backLink";
 import { Rating } from "../../components/rating";
@@ -24,6 +23,9 @@ export function Details() {
   const { user } = useAuth();
   const params = useParams();
   const navigate = useNavigate();
+
+  const originalDate = new Date(note?.created_at);
+  const adjustedDate = subHours(originalDate, 3);
 
   const avatarUrl = user.avatar
     ? `${api.defaults.baseURL}/files/${user.avatar}`
@@ -80,9 +82,7 @@ export function Details() {
 
             <span>
               <AiOutlineClockCircle />
-              {format(new Date(note.created_at), "dd/MM/yyyy", {
-                locale: ptBR,
-              })}
+              {format(adjustedDate, "dd/MM/yyyy 'Ás' HH:mm:ss")}
             </span>
           </Styles.ContentProfileAndCreatedAt>
 

@@ -1,5 +1,8 @@
 # Rocket Movies
 
+- Test here:
+https://web-rocket-movies.netlify.app/
+
 application to manage film and series notes <br/>
 
 ## 🛠 Used

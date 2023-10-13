@@ -9,7 +9,7 @@ import { BackLink } from "../../components/backLink";
 import { useAuth } from "../../hooks/auth";
 import { useState } from "react";
 import { FormError } from "../../components/formError";
-import avatar_img from "../../../public/avatar_placeholder.svg";
+import avatar_img from "../../assets/avatar_placeholder.svg";
 import { api } from "../../services/api";
 
 export function Profile() {

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import backgroundImg from "../../assets/cineBackgroundImg.svg";
 
 export const Container = styled.div`
   height: 100vh;
@@ -50,7 +51,7 @@ export const Form = styled.div`
 
 export const Background = styled.div`
   flex: 1;
-  background: url("/cineBackgroundImg.svg") no-repeat center center;
+  background: url(${backgroundImg}) no-repeat center center;
 
   background-size: cover;
 

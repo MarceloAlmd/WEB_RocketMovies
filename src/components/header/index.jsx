@@ -5,7 +5,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { Modal } from "../modal";
 import { useState } from "react";
 import { useAuth } from "../../hooks/auth";
-import avatar_img from "../../../public/avatar_placeholder.svg";
+import avatar_img from "../../assets/avatar_placeholder.svg";
 import { api } from "../../services/api";
 
 export function Header({ setTitle }) {

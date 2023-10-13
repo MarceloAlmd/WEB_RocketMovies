@@ -10,7 +10,7 @@ import { useEffect, useState } from "react";
 import { useAuth } from "../../hooks/auth";
 import { api } from "../../services/api";
 import { useNavigate, useParams } from "react-router-dom";
-import avatar_img from "../../../public/avatar_placeholder.svg";
+import avatar_img from "../../assets/avatar_placeholder.svg";
 import { Button } from "../../components/button";
 import { Modal } from "../../components/modal";
 import { Alert } from "../../components/alert";
